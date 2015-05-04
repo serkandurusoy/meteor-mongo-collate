@@ -22,34 +22,34 @@ The `keys` must match match your document keys and the `locales` must be valid l
 
 #Example
 
-// Create the collection
-Players = new Mongo.Collection('players');
-
-// Initialize the collation on the server
-if (Meteor.isServer) {
-  Players.collate({
-    keys: ['name', 'lastName'],
-    locales: ['tr-TR', 'de-DE']
-  });
-}
-
-// Insert your data
-Players.insert({
-  name: 'Serkan',
-  lastName: 'Durusoy'
-});
-
-// Fetch your data
-Players.findOne();
-
-/*
-{
-  name: 'Serkan',
-  lastName: 'Durusoy',
-  collators: {
-    tr-TR: 'xxxxx',
-    de-DE: 'xxxxx'
-  }
-}
-*/
+    // Create the collection
+    Players = new Mongo.Collection('players');
+    
+    // Initialize the collation on the server
+    if (Meteor.isServer) {
+      Players.collate({
+        keys: ['name', 'lastName'],
+        locales: ['tr-TR', 'de-DE']
+      });
+    }
+    
+    // Insert your data
+    Players.insert({
+      name: 'Serkan',
+      lastName: 'Durusoy'
+    });
+    
+    // Fetch your data
+    Players.findOne();
+    
+    /*
+    {
+      name: 'Serkan',
+      lastName: 'Durusoy',
+      collators: {
+        tr-TR: 'xxxxx',
+        de-DE: 'xxxxx'
+      }
+    }
+    */
 
