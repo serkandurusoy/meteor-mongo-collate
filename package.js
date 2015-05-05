@@ -8,11 +8,13 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0');
+
+  api.use('underscore','server');
+  api.use('check','server');
+  api.use('matb33:collection-hooks@0.7.13','server');
+  api.use('serkan.durusoy:ilib@11.0.2', 'server');
+
   api.addFiles('mongo-collate.js');
+
 });
 
-Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('serkandurusoy:mongo-collate');
-  api.addFiles('mongo-collate-tests.js');
-});
