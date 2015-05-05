@@ -7,4 +7,5 @@
 - [ ] Create and export a utility function that collates given document(s)
 - [ ] Factor out a custom build from ilib so that we only get what we need (sortkey)
 - [ ] Ability to create sort keys on the client
+- [ ] Support collating on array of strings/numbers as key values
 

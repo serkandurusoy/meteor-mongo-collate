@@ -72,8 +72,19 @@ if (Meteor.isServer) {
         if (!doc[key]) {
           console.warn('The document does not contain a collatible key named '
               + key
+              + ' therefore omitted from collation.'
+              + '. Your sorts on this key may be skewed.');
+        } else if ( !(_.isString(doc[key]) || _.isNumber(doc[key])) ) {
+          console.warn('The '
+              + key
+              + ' is not string or number therefore omitted from collation.'
               + '. Your sorts on this key may be skewed.');
         } else {
+          if (!_.isString(doc[key])) { // TODO: Is this necessary? Check how numbers are sorted on their generated sortKeys
+            console.warn('The type of '
+                + key
+                + ' is not string. Your sorts on this key may be skewed.');
+          }
           doc[store][key] = {};
 
           _.each(locales, function(locale) {
