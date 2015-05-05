@@ -1,5 +1,3 @@
-# Very early WIP. Don't use!
-
 Language based sorting and collations for mongo.
 
 Currently, mongodb's native sorting is English based and case sensitive. But for
@@ -36,11 +34,7 @@ sort key in a given language, is the [ilib library](https://www.npmjs.com/packag
 for which, the [meteor wrapper](https://atmospherejs.com/serkandurusoy/ilib)
 has been published on atmosphere to the very purpose.
 
-TODO:
+# Acknowledgements
 
-- [ ] Spread the word and get contributors on board, perhaps hand this over to
-      one of those more organized meteor i18n initiatives
-- [ ] Write some tests
-- [ ] Factor out a custom build from ilib so that we only get what we need (sortkey)
-- [ ] Ability to create sort keys on the client
-
+* This whole package is heavily inspired by the [work of Derick Rethans](http://derickrethans.nl/mongodb-collation.html)
+* Thanks to Edwin H. from [JEDLSoft](http://jedlsoft.com/) for very [quick responses](https://sourceforge.net/p/i18nlib/discussion/general) on the collation library
