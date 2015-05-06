@@ -31,8 +31,8 @@ does exactly that for the keys and languages on selected collections.
 
 Currently, the only javascript library that can transform any given string to its
 sort key in a given language, is the [ilib library](https://www.npmjs.com/package/ilib)
-for which, the [meteor wrapper](https://atmospherejs.com/serkandurusoy/ilib)
-has been published on atmosphere to the very purpose.
+which gets included in this package, but not exported due to its module based
+dependency tree.
 
 # Acknowledgements
 

@@ -7,14 +7,18 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
+  Npm.depends({
+    ilib: "11.0.2"
+  });
+
   api.versionsFrom('1.0');
 
   api.use('underscore','server');
   api.use('check','server');
+  api.use('mongo','server');
   api.use('matb33:collection-hooks@0.7.13','server');
-  api.use('serkan.durusoy:ilib@11.0.2', 'server');
 
-  api.addFiles('mongo-collate.js');
+  api.addFiles('libs.js', 'server');
+  api.addFiles('mongo-collate.js', 'server');
 
 });
-
