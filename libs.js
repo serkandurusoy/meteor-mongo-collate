@@ -19,3 +19,34 @@ bin2hex = function (s) {
 
   return o;
 };
+
+deepExtend = function(obj, path, value) {
+  if (typeof path === "string")
+    path = path.split(".");
+
+  if (path.length > 1) {
+    var e = path.shift();
+    assign(obj[e] =
+            Object.prototype.toString.call(obj[e]) === "[object Object]"
+                ? obj[e]
+                : {},
+        path,
+        value);
+  } else
+    obj[path[0]] = value;
+};
+
+deepGet = function(obj, path) {
+  path = path.replace(/\[(\w+)\]/g, '.$1');
+  path = path.replace(/^\./, '');
+  path = path.split('.');
+  while (path.length) {
+    var e = path.shift();
+    if (e in obj) {
+      obj = obj[e];
+    } else {
+      return;
+    }
+  }
+  return obj;
+};
